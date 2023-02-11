@@ -4,7 +4,7 @@ const cors = require('cors');
 
 require('dotenv').config();
 const apiKey = process.env.API_KEY;
-const port = process.env.PORT;
+const port = process.env.PORT || 3001;
 
 const app = express();
 
@@ -41,5 +41,5 @@ app.get('/maps/photo/:maxwidth/:photoreference', (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log('Express proxy server for Google Maps API listening on port 3001');
+  console.log(`Listening on port ${port}`);
 });
